@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: unset;
+        }
+
+        header {
+            background-color: grey;
+            height: 100vh;
+        }
+
+        nav {
+            background-color: blue;
+            height: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            place-items: center;
+            padding: 0px 30px 0px;
+        }
+
+        .header-logo {
+            grid-column: 2 / span 1;
+        }
+
+        #english {
+            grid-column: 3 / span 1;
+            justify-self: end;
+        }
+
+        .banner {
+            display: flex;
+            position: relative;
+        }
+
+        .jumppy {
+            position: absolute;
+        }
+
+        main {
+            background-color: blanchedalmond;
+            /* height: 2000px; */
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-section {
+            background-color: brown;
+            width: 150px;
+        }
+
+        .card-section {
+            background-color: rgb(42, 165, 138);
+            width: 800px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .resultandbtn {
+            background-color: aqua;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-result {
+            background-color: rgb(118, 170, 118);
+        }
+
+        .pages {
+            background-color: rgb(209, 135, 169);
+            height: 50px;
+        }
+
+        footer {
+            background-color: blueviolet;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="header-logo">logo</div>
+            <button id="english" type="button">English</button>
+        </nav>
+        <div class="banner">
+            <div class="carousel">可以用套件</div>
+            <div class="jumppy">引導往下</div>
+        </div>
+    </header>
+    <main>
+        <div class="search-section">可能用漢堡條來做搜尋欄</div>
+        <div class="card-section">
+            <div class="resultandbtn">
+                <div>已顯示???個結果</div>
+                <div>這邊要做圖卡列表切換按鈕</div>
+            </div>
+            <div class="card-result">放卡片</div>
+            <div class="pages">分頁器</div>
+        </div>
+    </main>
+    <footer>
+        <div class="intro">介紹文</div>
+        <div class="footer-logo">logo</div>
+    </footer>
+</body>
+
+</html>
