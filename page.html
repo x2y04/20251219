@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>比賽詳細</title>
+    <style>
+        body {
+            margin: unset;
+        }
+
+        header {
+            background-color: grey;
+            height: 100vh;
+        }
+
+        nav {
+            background-color: blue;
+            height: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            place-items: center;
+            padding: 0px 30px 0px;
+        }
+
+        .header-logo {
+            grid-column: 2 / span 1;
+        }
+
+        #english {
+            grid-column: 3 / span 1;
+            justify-self: end;
+        }
+
+        main {
+            background-color: blanchedalmond;
+            height: 2000px;
+            padding: 10px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            padding: 20px 250px;
+            gap: 10px;
+        }
+
+        .content {
+            background-color: rgb(197, 169, 135);
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .info {
+            background-color: rgb(222, 222, 222);
+            padding: 10px;
+        }
+
+        footer {
+            background-color: blueviolet;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="header-logo">logo</div>
+            <button id="english" type="button">English</button>
+        </nav>
+    </header>
+    <main>
+        <a href="./index.html">返回上一頁</a>
+        <section class="content">
+            <div class="info">路跑介紹</div>
+            <div class="info">不同的介紹區塊</div>
+            <div class="info">不同的介紹區塊</div>
+            <div class="info">不同的介紹區塊</div>
+            <div class="info">不同的介紹區塊</div>
+            <div class="info">不同的介紹區塊</div>
+            <div class="info">不同的介紹區塊</div>
+            <div class="info">放地圖</div>
+            <div class="info">放更多賽事,可以用套件swiper</div>
+        </section>
+        <div class="float">浮動視窗</div>
+    </main>
+    <footer>
+        <div class="intro">介紹文</div>
+        <div class="footer-logo">logo</div>
+    </footer>
+</body>
+
+</html>
