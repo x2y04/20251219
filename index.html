@@ -16,8 +16,8 @@
         }
 
         nav {
-            background-color: blue;
-            height: 30px;
+            background-color: #004e89;
+            height: 55px;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             place-items: center;
@@ -31,23 +31,34 @@
         #english {
             grid-column: 3 / span 1;
             justify-self: end;
+            width: 182px;
+            height: 44px;
+            background-color: #fe6b35;
+            border: unset;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 20px;
+            color: white;
+            letter-spacing: 5px;
         }
 
         .banner {
             background-color: rgb(151, 151, 151);
             display: flex;
             position: relative;
-            height: calc(100% - 30px);
+            height: calc(100% - 55px);
             width: 100%;
         }
 
         .jumppy {
-            background-color: orangered;
-            width: 350px;
-            height: 30px;
+            /* background-color: orangered; */
             position: absolute;
             bottom: 15px;
-            left: calc((100% - 350px)/2);
+            left: calc((100% - 400px)/2);
+        }
+
+        .jumppy img {
+            width: 400px;
         }
 
         main {
@@ -55,6 +66,7 @@
             /* height: 2000px; */
             display: flex;
             justify-content: center;
+            padding: 0px 50px;
         }
 
         .search-section {
@@ -64,7 +76,7 @@
 
         .card-section {
             background-color: rgb(42, 165, 138);
-            width: 800px;
+            /* width: 800px; */
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -82,15 +94,24 @@
 
         .pages {
             background-color: rgb(209, 135, 169);
-            height: 50px;
+            /* height: 50px; */
         }
 
         footer {
-            background-color: blueviolet;
-            height: 100px;
+            background-color: #004e89;
             display: flex;
             justify-content: space-between;
-            padding: 20px;
+            align-items: flex-end;
+            padding: 50px 360px;
+        }
+
+        .intro {
+            color: white;
+            font-size: 24px;
+        }
+
+        #contact-link {
+            color: white;
         }
     </style>
 </head>
@@ -98,12 +119,12 @@
 <body>
     <header>
         <nav>
-            <div class="header-logo">logo</div>
+            <div class="header-logo"><img src="./img/logo.png" alt=""></div>
             <button id="english" type="button">English</button>
         </nav>
         <div class="banner">
             <div class="carousel">可以用套件</div>
-            <div class="jumppy">引導往下</div>
+            <div class="jumppy"><img src="./img/下滑指示.png" alt=""></div>
         </div>
     </header>
     <main>
@@ -111,15 +132,19 @@
         <div class="card-section">
             <div class="resultandbtn">
                 <div>已顯示???個結果</div>
-                <div>這邊要做圖卡列表切換按鈕</div>
+                <div>這邊是圖卡列表切換按鈕</div>
             </div>
             <div class="card-result">放卡片</div>
             <div class="pages">分頁器</div>
         </div>
     </main>
     <footer>
-        <div class="intro">介紹文</div>
-        <div class="footer-logo">logo</div>
+        <div class="intro">歡迎各單位登錄賽事，請聯絡
+            <a id="contact-link" href="marathoner300@gmail.com">全國賽會服務組</a>
+            <br>
+            如對各項賽事有任何疑問，請逕洽賽事主辦單位，網頁管理者恕不回答相關賽事問題。
+        </div>
+        <div class="footer-logo"><img src="./img/footer-logo.png" alt=""></div>
     </footer>
 </body>
 
