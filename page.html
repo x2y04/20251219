@@ -58,17 +58,28 @@
 
         main {
             background-color: blanchedalmond;
-            height: 2000px;
             padding: 10px 30px;
             display: flex;
             flex-direction: column;
             align-items: left;
-            padding: 20px 250px;
+            padding: 20px 325px;
+        }
+
+        .return {
+            text-decoration: unset;
+            color: #004e89;
+            font-size: 24px;
+            font-weight: bolder;
+        }
+
+        .all-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             gap: 10px;
         }
 
         .content {
-            background-color: rgb(197, 169, 135);
             display: flex;
             flex-direction: column;
             gap: 30px;
@@ -76,7 +87,129 @@
 
         .info {
             background-color: rgb(222, 222, 222);
-            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .big-title,
+        .sub-title {
+            padding-left: 35px;
+            color: #004e89;
+            font-size: 64px;
+            font-weight: bolder;
+            margin: 15px 0px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sub-title {
+            font-size: 40px;
+        }
+
+        .float-title {
+            font-size: 36px;
+            color: #004e89;
+            font-weight: bold;
+        }
+
+        .parallelogram {
+            background-color: #fe6b35;
+            width: 20px;
+            height: 40px;
+            border-radius: 3px;
+            transform: skew(-15deg);
+        }
+
+        .info-list,
+        .info-text,
+        .info-float {
+            padding-left: 75px;
+            color: black;
+            font-size: 20px;
+        }
+
+        .info-text {
+            line-height: 2;
+        }
+
+        .info-float {
+            padding: unset;
+        }
+
+        .tags-holder,
+        .tags-holder-float {
+            padding-left: 75px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .tags-holder-float {
+            padding: unset;
+        }
+
+        .tag {
+            background-color: white;
+            border: 1px solid #fe6b35;
+            border-radius: 3px;
+            color: #004e89;
+            padding: 4px 15px;
+            font-size: 14px;
+        }
+
+        .float {
+            position: sticky;
+            top: 50px;
+            background-color: white;
+            width: 412px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 30px;
+            border: 3px solid #004e89;
+            border-radius: 10px;
+            box-shadow: 10px 10px #fe6b35;
+        }
+
+        .float-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .entry {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #deadline {
+            height: 34px;
+            color: #fe6b35;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            line-height: 2;
+            text-align: center;
+            border: 1px solid #fe6b35;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border-bottom: unset;
+        }
+
+        #entry-btn {
+            height: 80px;
+            padding: unset;
+            background-color: #fe6b35;
+            width: 100%;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 35px;
+            border: unset;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
         }
 
         footer {
@@ -109,19 +242,90 @@
         </div>
     </header>
     <main>
-        <a href="./index.html">返回上一頁</a>
-        <section class="content">
-            <div class="info">路跑介紹</div>
-            <div class="info">不同的介紹區塊</div>
-            <div class="info">不同的介紹區塊</div>
-            <div class="info">不同的介紹區塊</div>
-            <div class="info">不同的介紹區塊</div>
-            <div class="info">不同的介紹區塊</div>
-            <div class="info">不同的介紹區塊</div>
-            <div class="info">放地圖</div>
-            <div class="info">放更多賽事,可以用套件swiper</div>
+        <a class="return" href="./index-2.html">返回上一頁</a>
+        <section class="all-content">
+            <div class="content">
+                <div class="info">
+                    <div class="big-title">
+                        <div class="parallelogram"></div>
+                        <span>路跑大標題</span>
+                    </div>
+                    <span class="info-list">OO路跑</span>
+                    <span class="info-list">台中市西屯區文華路100號</span>
+                    <span class="info-list">2025-12-05&nbsp;~&nbsp;2025-12-07</span>
+                    <span class="info-list">TWD 1,130</span>
+                    <span class="info-list">無認證</span>
+                    <div class="tags-holder">
+                        <div class="tag">3k</div>
+                        <div class="tag">5k</div>
+                        <div class="tag">10k</div>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="sub-title">
+                        <div class="parallelogram"></div>
+                        <span>賽事簡介</span>
+                    </div>
+                    <span class="info-text">一起在冬夜的星空下，跑出屬於你的光！<br>
+                        2025 逢甲星光路跑以「奔向光的方向」為主題，結合音樂、光影與充滿青春氣息的校園氛圍，打造專屬於台中的年度路跑盛事。<br>
+                        無論你是初跑者、跑步老手，還是想與朋友家人一起參加的休閒跑，本活動都能讓你在享受運動的同時，感受城市與校園的魅力。</span>
+                </div>
+                <div class="info">
+                    <div class="sub-title">
+                        <div class="parallelogram"></div>
+                        <span>比賽項目</span>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="sub-title">
+                        <div class="parallelogram"></div>
+                        <span>參賽贈品</span>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="sub-title">
+                        <div class="parallelogram"></div>
+                        <span>完賽好禮</span>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="sub-title">
+                        <div class="parallelogram"></div>
+                        <span>路線介紹</span>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="sub-title">
+                        <div class="parallelogram"></div>
+                        <span>常見問題</span>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="sub-title">
+                        <div class="parallelogram"></div>
+                        <span>路線地圖</span>
+                    </div>
+                </div>
+                <div class="info">放更多賽事,可以用套件swiper</div>
+            </div>
+            <div class="float">
+                <div class="float-title">路跑標題</div>
+                <div class="float-content">
+                    <span class="info-float">台中市西屯區文華路100號</span>
+                    <span class="info-float">2025-12-05&nbsp;~&nbsp;2025-12-07</span>
+                    <div class="tags-holder-float">
+                        <div class="tag">3k</div>
+                        <div class="tag">5k</div>
+                        <div class="tag">10k</div>
+                    </div>
+                </div>
+                <div class="entry">
+                    <div id="deadline">報名截止：2025-11-30</div>
+                    <button id="entry-btn" type="button">立即報名</button>
+                </div>
+            </div>
         </section>
-        <div class="float">浮動視窗</div>
+
     </main>
     <footer>
         <div class="intro">歡迎各單位登錄賽事，請聯絡
