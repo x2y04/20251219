@@ -12,12 +12,12 @@
 
         header {
             background-color: grey;
-            height: 100vh;
+            /* height: 100vh; */
         }
 
         nav {
-            background-color: blue;
-            height: 30px;
+            background-color: #004e89;
+            height: 55px;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             place-items: center;
@@ -31,6 +31,23 @@
         #english {
             grid-column: 3 / span 1;
             justify-self: end;
+            width: 182px;
+            height: 44px;
+            background-color: #fe6b35;
+            border: unset;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 20px;
+            color: white;
+            letter-spacing: 5px;
+        }
+
+        .banner {
+            background-color: rgb(151, 151, 151);
+            display: flex;
+            position: relative;
+            height: 650px;
+            width: 100%;
         }
 
         main {
@@ -57,11 +74,20 @@
         }
 
         footer {
-            background-color: blueviolet;
-            height: 100px;
+            background-color: #004e89;
             display: flex;
             justify-content: space-between;
-            padding: 20px;
+            align-items: flex-end;
+            padding: 50px 360px;
+        }
+
+        .intro {
+            color: white;
+            font-size: 24px;
+        }
+
+        #contact-link {
+            color: white;
         }
     </style>
 </head>
@@ -69,9 +95,12 @@
 <body>
     <header>
         <nav>
-            <div class="header-logo">logo</div>
+            <div class="header-logo"><img src="./img/logo.png" alt=""></div>
             <button id="english" type="button">English</button>
         </nav>
+        <div class="banner">
+            <div class="carousel">可以用套件</div>
+        </div>
     </header>
     <main>
         <a href="./index.html">返回上一頁</a>
@@ -89,8 +118,12 @@
         <div class="float">浮動視窗</div>
     </main>
     <footer>
-        <div class="intro">介紹文</div>
-        <div class="footer-logo">logo</div>
+        <div class="intro">歡迎各單位登錄賽事，請聯絡
+            <a id="contact-link" href="marathoner300@gmail.com">全國賽會服務組</a>
+            <br>
+            如對各項賽事有任何疑問，請逕洽賽事主辦單位，網頁管理者恕不回答相關賽事問題。
+        </div>
+        <div class="footer-logo"><img src="./img/footer-logo.png" alt=""></div>
     </footer>
 </body>
 
