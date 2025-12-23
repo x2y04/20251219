@@ -46,35 +46,35 @@
             <div class="pages">
                 <ul class="pagination">
                     <li>
-                        <a href="">
+                        <a class="page-back" href="">
                             <span aria-hidden="true">
                                 <i class="fa-solid fa-angle-left"></i>
                             </span>
                         </a>
                     </li>
                     <li>
-                        <a href="">1</a>
+                        <a class="page-number page-1" href="">1</a>
                     </li>
                     <li>
-                        <a href="" aria-current="page">2</a>
+                        <a class="page-number page-2" href="" aria-current="page">2</a>
                     </li>
                     <li>
-                        <a href="">3</a>
+                        <a class="page-number page-3" href="">3</a>
                     </li>
                     <li>
-                        <a href="">4</a>
+                        <a class="page-number page-4" href="">4</a>
                     </li>
                     <li>
-                        <a href="">5</a>
+                        <a class="page-number page-5" href="">5</a>
                     </li>
                     <li>
                         <a href="">...</a>
                     </li>
                     <li>
-                        <a href="">10</a>
+                        <a class="page-number page-10" href="">10</a>
                     </li>
                     <li>
-                        <a href="">
+                        <a class="page-forward" href="">
                             <span aria-hidden="true">
                                 <i class="fa-solid fa-angle-right"></i>
                             </span>
@@ -191,7 +191,17 @@
                 </div>
             `;
         })
+
+        console.log(compList.length);
+        const pageAmouts = Math.ceil(compList.length / 10);
+        console.log(pageAmouts);
+
+        const pageBtnNum = document.querySelector('#page-number');
+        const pageBtnBack = document.querySelector('#page-back');
+        const pageBtnForward = document.querySelector('#page-forward');
+
     </script>
+
 </body>
 
 </html>
