@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>比賽詳細</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <style>
         body {
             margin: unset;
@@ -222,7 +223,7 @@
         }
 
         .more {
-            margin-top: 60px;
+            margin: 60px 0;
         }
 
         .bottom-content .more .sub-title {
@@ -232,6 +233,39 @@
         .bottom-content .more .sub-title span {
             border-bottom: 5px solid #fe6b35;
             width: 300px;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 300px;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-slide {
+            width: 80%;
+        }
+
+        .swiper-slide:nth-child(2n) {
+            width: 60%;
+        }
+
+        .swiper-slide:nth-child(3n) {
+            width: 40%;
         }
 
         footer {
@@ -297,30 +331,50 @@
                         <div class="parallelogram"></div>
                         <span>比賽項目</span>
                     </div>
+                    <span class="info-text">21K 半馬組（限時 3.5 小時）<br>
+                        10K 挑戰組（限時 2 小時）<br>
+                        5K 休閒組（不限時）<br>
+                        3K 親子組（適合親子、團體）<br>
+                        企業公益合作組（10 人以上團報）</span>
                 </div>
                 <div class="info">
                     <div class="sub-title">
                         <div class="parallelogram"></div>
                         <span>參賽贈品</span>
                     </div>
+                    <span class="info-text">活動紀念 T-shirt<br>
+                        星光主題號碼布<br>
+                        束口袋<br>
+                        活動限定貼紙<br>
+                        晚間螢光手環<br>
+                        補給站飲料與能量零食</span>
                 </div>
                 <div class="info">
                     <div class="sub-title">
                         <div class="parallelogram"></div>
                         <span>完賽好禮</span>
                     </div>
+                    <span class="info-text">完賽獎牌<br>
+                        成績證明（21K / 10K）<br>
+                        完賽毛巾<br>
+                        活動完賽電子照片下載</span>
                 </div>
                 <div class="info">
                     <div class="sub-title">
                         <div class="parallelogram"></div>
                         <span>路線介紹</span>
                     </div>
+                    <span class="info-text">21K 半馬組<br>
+                        結合校園周邊、中央公園及市區光廊段，欣賞城市夜景。<br>
+                        路線亮點：星軌街景區 + 藝術光雕橋段</span>
                 </div>
                 <div class="info">
                     <div class="sub-title">
                         <div class="parallelogram"></div>
                         <span>常見問題</span>
                     </div>
+                    <span class="info-text">Q1：如果遇到下雨會延期嗎？<br>
+                        A：小雨照常舉行，若遇重大天候則另行公告。</span>
                 </div>
             </div>
             <div class="float">
@@ -356,6 +410,21 @@
             <div class="sub-title">
                 <span>更多賽事</span>
             </div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
+                    <div class="swiper-slide">Slide 6</div>
+                    <div class="swiper-slide">Slide 7</div>
+                    <div class="swiper-slide">Slide 8</div>
+                    <div class="swiper-slide">Slide 9</div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
         </div>
     </section>
     <footer>
@@ -366,6 +435,19 @@
         </div>
         <div class="footer-logo"><img src="./img/footer-logo.png" alt=""></div>
     </footer>
+    <!-- ============================================= HTML / JS ============================================= -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: "auto",
+            spaceBetween: 30,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
 </body>
 
 </html>
