@@ -352,7 +352,6 @@
             </div>
             <div class="card-result"> </div>
             <div class="pages">分頁器</div>
-
     </main>
     <footer>
         <div class="intro">歡迎各單位登錄賽事，請聯絡
@@ -387,27 +386,31 @@
         let compList = [
             {
                 "img": "./img/card/img-1.jpg",
-                "title": "2025濁水溪紫金馬拉松－虎康林內站",
+                "title": "濁水溪紫金馬拉松－虎康林內站",
                 "locate": "雲林縣林內鄉林內驛站",
                 "date": "2025-12-27（六）",
                 "price": "TWD 700 ~ 1,200",
-                "tag": "42K"
+                "tag": "42K",
+                "link": "https://www.bao-ming.com/eb/content/6695#31527",
             },
             {
                 "img": "./img/card/img-2.jpg",
-                "title": "2025 第八屆龍虎鳯越野",
+                "title": "第八屆龍虎鳯越野",
                 "locate": "苗栗縣泰安鄉騰龍溫泉山莊",
                 "date": "2025-12-27（六）",
                 "price": "TWD 700 ~ 1,200",
-                "tag": "10K"
+                "tag": "10K",
+                "link": "https://lohasnet.tw/DTP-Trail2025/",
+
 
             }, {
                 "img": "./img/card/img-3.jpg",
-                "title": "2025 北宜公路超級馬拉松",
+                "title": "北宜公路超級馬拉松",
                 "locate": "新北市新店區新店國小",
                 "date": "2025-12-27（六）",
                 "price": "TWD 700 ~ 1,200",
                 "tag": "42K",
+                "link": "https://www.bao-ming.com/eb/content/6484#30371",
 
             }
         ];
@@ -451,7 +454,12 @@
                         <div class="tag-box">
                             <div class="tag">${item.tag}</div>
                         </div>
-                        <button type="button" class="card-btn">立即報名</button>
+                        <a href="${item.link}" target="_blank">
+                            <button type="button" class="card-btn">
+                                立即報名
+                            </button>
+                        </a>
+                        
                     </div>
                 </div>
             `;
