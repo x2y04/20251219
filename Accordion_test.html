@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>篩選練習</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        /* 篩選欄 */
+        .accordion-wrapper {
+            width: 300px;
+            max-width: 100%;
+            /* margin: 0 auto; */
+        }
+
+        .panel {
+            border: none;
+            box-shadow: none;
+        }
+
+        .panel-default>.panel-heading {
+            border: none;
+        }
+
+        .panel-heading .accordion-toggle.collapsed:after {
+            content: "\e080";
+        }
+
+        .panel-default>.panel-heading {
+            background-color: #fafafa;
+            color: rgb(24, 13, 175);
+        }
+
+        /* 展開 / 收合箭頭 */
+        .panel-heading .accordion-toggle:after {
+            font-family: 'Glyphicons Halflings';
+            content: "\e113";
+            float: right;
+            color: rgb(24, 13, 175);
+            font-size: 14px;
+        }
+
+        .panel-heading .accordion-toggle.collapsed:after {
+            content: "\e114";
+            color: rgb(24, 13, 175);
+
+        }
+
+        /* 篩選項目 */
+        .checkbox {
+            display: inline-flex;
+            gap: 5px;
+            border: 2px solid #f16f13;
+            padding: 4px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .checkbox input[type="checkbox"] {
+            appearance: none;
+        }
+
+        .checkbox:has(input:checked) {
+            border-color: #f16f13;
+            background-color: rgb(24, 13, 175);
+            color: rgb(255, 255, 255);
+        }
+
+        #submit-btn {
+            display: block;
+            /* margin: 20px auto; */
+            width: 150px;
+            height: 50px;
+            border-radius: 4px;
+            border: 2px solid #f16f13;
+            background-color: white;
+            color: rgb(24, 13, 175);
+            letter-spacing: 5px;
+            font-weight: bold;
+        }
+
+
+        #result {
+            background-color: aliceblue;
+            width: 300px;
+            height: 200px;
+            padding: 5px;
+            /* margin: 30px auto; */
+        }
+
+        #result div {
+            display: inline-block;
+            background-color: rgb(255, 255, 255);
+            color: rgb(24, 13, 175);
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 2px solid #f16f13;
+            margin: 5px 5px 0 0;
+            font-size: 14px;
+        }
+
+        #clear-btn {
+            display: block;
+            /* margin: 20px auto; */
+            width: 300px;
+            height: 50px;
+            border: none;
+            background-color: rgb(241, 244, 247);
+            color: rgb(24, 13, 175);
+            letter-spacing: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 手風琴 -->
+    <div class="container">
+        <div class="accordion-wrapper">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                href="#collapseOne">
+                                比賽項目
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <label>
+                                <input id="select-all-event" type="checkbox">
+                                全選
+                            </label>
+
+                            <label class="checkbox">
+                                <input type="checkbox" class="event" value="1K">
+                                1K
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="event" value="10K">
+                                10K
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="event" value="20K">
+                                20K
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="event" value="30K">
+                                30K
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="event" value="40K">
+                                40K
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="event" value="半馬組">
+                                半馬組
+                            </label>
+                            <label class="checkbox">
+
+                                <input type="checkbox" class="event" value="全馬組">
+                                全馬組
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                href="#collapseTwo">
+                                報名狀態
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <label>
+                                <input id="select-all-state" type="checkbox">
+                                全選
+                            </label>
+
+                            <label class="checkbox">
+                                <input type="checkbox" class="state" value="顯示尚未開放報名">
+                                顯示尚未開放報名
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="state" value="顯示已開放報名">
+                                顯示已開放報名
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="state" value="顯示報名已截止">
+                                顯示報名已截止
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                href="#collapseThree">
+                                認證標章
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <label>
+                                <input id="select-all-organize" type="checkbox">
+                                全選
+                            </label>
+
+                            <label class="checkbox">
+                                <input type="checkbox" class="organize" value="IAAF認證賽事">
+                                IAAF認證賽事
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="organize" value="AIMS認證賽事">
+                                AIMS認證賽事
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" class="organize" value="本賽道經AIMS/IAAF丈量員丈量">
+                                本賽道經AIMS/IAAF丈量員丈量
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end container -->
+    
+
+    <button id="submit-btn" type="button">立即搜尋</button>
+
+    
+
+    <div id="result"></div>
+    <button id="clear-btn" type="button">
+        <i class="bi bi-trash-fill"></i>
+    </button>
+
+    <script>
+
+
+        const submitBtn = document.querySelector('#submit-btn');
+        const clearBtn = document.querySelector('#clear-btn');
+        const result = document.querySelector('#result');
+        const selectAllEvent = document.querySelector('#select-all-event');
+        const eventAll = document.querySelectorAll('.event');
+        const selectAllState = document.querySelector('#select-all-state');
+        const stateAll = document.querySelectorAll('.state');
+        const selectAllOrganize = document.querySelector('#select-all-organize');
+        const organizeAll = document.querySelectorAll('.organize');
+
+
+        // ===============比賽項目
+        selectAllEvent.addEventListener('click', function () {
+            if (selectAllEvent.checked) {
+                eventAll.forEach(function (inputCheckbox) {
+                    inputCheckbox.checked = true; // 被選擇
+                });
+            } else {
+                eventAll.forEach(function (inputCheckbox) {
+                    inputCheckbox.checked = false; // 沒被選擇
+                });
+            }
+        });
+
+        eventAll.forEach(function (inputCheckbox) {
+            inputCheckbox.addEventListener('click', function () {
+                selectAllEvent.checked = true;
+                for (let i = 0; i < eventAll.length; i++) {
+                    if (eventAll[i].checked === false) {  // 沒被選擇
+                        selectAllEvent.checked = false;       // 全選取消勾選
+                        break;
+                    }
+                }
+            });
+        });
+
+        // ===============報名狀態
+        selectAllState.addEventListener('click', function () {
+            if (selectAllState.checked) {
+                stateAll.forEach(function (inputCheckbox) {
+                    inputCheckbox.checked = true; // 被選擇
+                });
+            } else {
+                stateAll.forEach(function (inputCheckbox) {
+                    inputCheckbox.checked = false; // 沒被選擇
+                });
+            }
+        });
+
+        stateAll.forEach(function (inputCheckbox) {
+            inputCheckbox.addEventListener('click', function () {
+                selectAllState.checked = true;
+                for (let i = 0; i < stateAll.length; i++) {
+                    if (stateAll[i].checked === false) {  // 沒被選擇
+                        selectAllState.checked = false;       // 全選取消勾選
+                        break;
+                    }
+                }
+            });
+        });
+
+        // ===============認證標章
+        selectAllOrganize.addEventListener('click', function () {
+            if (selectAllOrganize.checked) {
+                organizeAll.forEach(function (inputCheckbox) {
+                    inputCheckbox.checked = true;
+                });
+            } else {
+                organizeAll.forEach(function (inputCheckbox) {
+                    inputCheckbox.checked = false;
+                });
+            }
+        });
+
+        organizeAll.forEach(function (inputCheckbox) {
+            inputCheckbox.addEventListener('click', function () {
+                selectAllOrganize.checked = true;
+                for (let i = 0; i < stateAll.length; i++) {
+                    if (organizeAll[i].checked === false) {  // 沒被選擇
+                        selectAllOrganize.checked = false;       // 全選取消勾選
+                        break;
+                    }
+                }
+            });
+        });
+
+        //===============立即搜尋
+        submitBtn.addEventListener('click', function () {//要分開抓取
+            const checkedEvent = document.querySelectorAll('.event:checked');
+            const checkedState = document.querySelectorAll('.state:checked');
+            const checkedOrganize = document.querySelectorAll('.organize:checked');
+
+            let content = '';
+
+            checkedEvent.forEach(item => {
+                content += `<div># ${item.value}</div>`;
+            });
+
+            checkedState.forEach(item => {
+                content += `<div># ${item.value}</div>`;
+            });
+
+            checkedOrganize.forEach(item => {
+                content += `<div># ${item.value}</div>`;
+            });
+
+            result.innerHTML = content;
+        });
+
+        //================一鍵清除
+        clearBtn.addEventListener('click', function () {
+            result.innerHTML = '';
+        })
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
