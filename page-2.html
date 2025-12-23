@@ -183,6 +183,7 @@
             border-radius: 10px;
             box-shadow: 10px 10px #fe6b35;
             margin-right: 20px;
+            margin-bottom: 50px;
         }
 
         .float-content {
@@ -297,15 +298,24 @@
             color: white;
         }
 
-        .go-top {
-            background-color: #fe6b35;
-            /* width: 90px; */
-            height: 40px;
-            display: flex;
-            position: absolute;
-            right: 50px;
-            text-align: center;
-        }
+     .go-top {
+    background-color: #fe6b35;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;  /* 水平置中 */
+    align-items: center;      /* 垂直置中 */
+    position: fixed;          /* 改用 fixed */
+    right: 30px;
+    bottom: 30px;            /* 從右下角顯示 */
+    border-radius: 50%;      /* 圓形按鈕 */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 9999;           /* 確保在最上層 */
+}
+
+       
     </style>
 </head>
 
@@ -419,7 +429,9 @@
                 </div>
             </div>
         </section>
-        <div class="go-top">TOP</div>
+        <div class="gotop-track">
+            <div class="go-top">TOP</div>
+        </div>
     </main>
 
     <section class="bottom-content">
