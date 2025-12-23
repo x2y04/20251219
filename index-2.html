@@ -6,9 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全國賽會</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <style>
         body {
             margin: unset;
+            font-family: 'Inter';
         }
 
         header {
@@ -153,6 +159,140 @@
 
         .card-result {
             background-color: rgb(118, 170, 118);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card {
+            background-color: white;
+            width: 820px;
+            min-height: 270px;
+            padding: 20px;
+            box-shadow: 2px 2px 3px #d1d1d1;
+            border: 3px solid transparent;
+            margin-bottom: 35px;
+
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 20px;
+        }
+
+        .card:hover {
+            border: 3px solid #fe6b35;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            min-height: 250px;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .title {
+            color: #004b87;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .auth {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .auth img {
+            height: 20px;
+            width: auto;
+            opacity: 0.85;
+        }
+
+        .card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+        }
+
+        .info-text {
+            font-size: 16px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 1px;
+        }
+
+        .info-text i {
+            color: #F7C59F;
+            font-size: 18px;
+            width: 24px;
+            text-align: center;
+        }
+
+        .tag-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            border: 1px solid #fe6b35;
+            color: #1A659E;
+            min-width: 40px;
+            height: 20px;
+            padding: 2px 12px;
+            border-radius: 4px;
+
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-align: center;
+
+            cursor: default;
+        }
+
+        .card-btn {
+            background-color: #fe6b35;
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+
+            letter-spacing: 10px;
+            font-size: 20px;
+            text-align: center;
+            font-weight: 700;
+            text-indent: 6px;
+
+            cursor: pointer;
+        }
+
+        .card-btn:hover {
+            background-color: white;
+            color: #fe6b35;
+            border: 2px solid #fe6b35;
         }
 
         .pages {
@@ -210,9 +350,9 @@
                 <div>已顯示???個結果</div>
                 <div>這邊是圖卡列表切換按鈕</div>
             </div>
-            <div class="card-result">放卡片</div>
+            <div class="card-result"> </div>
             <div class="pages">分頁器</div>
-        </div>
+
     </main>
     <footer>
         <div class="intro">歡迎各單位登錄賽事，請聯絡
@@ -240,6 +380,83 @@
                 clickable: true,
             },
         });
+    </script>
+
+
+    <script>
+        let compList = [
+            {
+                "img": "./img/card/img-1.jpg",
+                "title": "2025濁水溪紫金馬拉松－虎康林內站",
+                "locate": "雲林縣林內鄉林內驛站",
+                "date": "2025-12-27（六）",
+                "price": "TWD 700 ~ 1,200",
+                "tag": "42K"
+            },
+            {
+                "img": "./img/card/img-2.jpg",
+                "title": "2025 第八屆龍虎鳯越野",
+                "locate": "苗栗縣泰安鄉騰龍溫泉山莊",
+                "date": "2025-12-27（六）",
+                "price": "TWD 700 ~ 1,200",
+                "tag": "10K"
+
+            }, {
+                "img": "./img/card/img-3.jpg",
+                "title": "2025 北宜公路超級馬拉松",
+                "locate": "新北市新店區新店國小",
+                "date": "2025-12-27（六）",
+                "price": "TWD 700 ~ 1,200",
+                "tag": "42K",
+
+            }
+        ];
+
+
+        const cardResult = document.querySelector(".card-result");
+
+
+        compList.forEach((item) => {
+            cardResult.innerHTML += `
+                <div class="card">
+                    <div class="card-img">
+                        <img src="${item.img}" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <h2 class="title">${item.title}</h2>
+                            </div>
+                            <div class="auth">
+                                <img src="./img/IAAF.png" alt="">
+                                <img src="./img/Property 1=AIMS.png" alt="">
+                                <img src="./img/Property 1=丈量認證.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="card-info">
+                            <div class="info-text">
+                                <i class="fa-solid fa-location-dot"></i>
+                                ${item.locate}
+                            </div>
+                            <div class="info-text">
+                                <i class="fa-solid fa-calendar"></i>
+                                ${item.date}
+                            </div>
+                            <div class="info-text">
+                                <i class="fa-solid fa-dollar-sign"></i>
+                                ${item.price}
+                            </div>
+                        </div>
+                        <div class="tag-box">
+                            <div class="tag">${item.tag}</div>
+                        </div>
+                        <button type="button" class="card-btn">立即報名</button>
+                    </div>
+                </div>
+            `;
+        })
+
     </script>
 </body>
 

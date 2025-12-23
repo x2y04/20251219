@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表樣式</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            font-family: Inter;
+        }
+
+        .list {
+            background-color: rgb(255, 255, 255);
+            width: 820px;
+            padding: 20px;
+            box-shadow: 2px 2px 3px #d1d1d1;
+        }
+
+        .list-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+        }
+
+        .list-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title {
+            color: #004b87;
+            font-size: 32px;
+            margin: 0px;
+        }
+
+        .auth {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .auth img {
+            height: 20px;
+            width: auto;
+            opacity: 0.85;
+        }
+
+        .list-flex {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .list-mid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .list-info {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 8px;
+        }
+
+        .info-text i {
+            color: #F7C59F;
+            font-size: 16px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .info-text {
+            font-size: 16px;
+            gap: 8px;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        .tag-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+
+        .tag {
+            border: 1px solid #fe6b35;
+            color: #1A659E;
+            min-width: 40px;
+            height: 20px;
+            padding: 2px 12px;
+            border-radius: 4px;
+
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-align: center;
+
+            cursor: default;
+        }
+
+        .list-btn {
+            background-color: #fe6b35;
+            color: white;
+            width: 160px;
+
+            padding: 10px;
+            border: 0;
+            border-radius: 8px;
+            letter-spacing: 8px;
+            font-size: 20px;
+            text-align: center;
+            font-weight: 500;
+            cursor: pointer;
+
+            align-self: self-end;
+        }
+
+        .list-btn:hover {
+            background-color: white;
+            color: #fe6b35;
+            border: 1;
+            border-color: #fe6b35;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="list">
+        <div class="list-content">
+            <div class="list-header">
+                <div class="list-title">
+                    <h2 class="title">逢甲大學路跑</h2>
+                </div>
+                <div class="auth">
+                    <img src="./img/IAAF.png" alt="">
+                    <img src="./img/Property 1=AIMS.png" alt="">
+                    <img src="./img/Property 1=丈量認證.png" alt="">
+                </div>
+            </div>
+
+            <div class="list-flex">
+                <div class="list-mid">
+                    <div class="list-info">
+                        <div class="info-text">
+                            <i class="fa-solid fa-location-dot"></i>
+                            臺中市西屯區文華路100號
+                        </div>
+                        <div class="info-text">
+                            <i class="fa-solid fa-calendar"></i>
+                            2025-11-29
+                        </div>
+                    </div>
+                    <div class="tag-box">
+                        <div class="tag">10K</div>
+                        <div class="tag">20K</div>
+                        <div class="tag">30K</div>
+                        <div class="tag">40K</div>
+                        <div class="tag">50K</div>
+                        <div class="tag">100K</div>
+                        <div class="tag">150K</div>
+                        <div class="tag">250K</div>
+                    </div>
+                </div>
+                <button type="button" class="list-btn">立即報名</button>
+            </div>
+        </div>
+    </div>
+
+    <img src="./列表.png" alt="">
+</body>
+
+</html>
