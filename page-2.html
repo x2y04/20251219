@@ -209,6 +209,7 @@
             border-top-left-radius: 3px;
             border-top-right-radius: 3px;
             border-bottom: unset;
+
         }
 
         #entry-btn {
@@ -218,9 +219,11 @@
             width: 100%;
             color: white;
             font-size: 24px;
+            text-align: center;
             font-weight: bold;
             text-align: center;
-            letter-spacing: 35px;
+            letter-spacing: 10px;
+            padding-left: 5px;
             border: unset;
             border-bottom-left-radius: 3px;
             border-bottom-right-radius: 3px;
@@ -298,24 +301,28 @@
             color: white;
         }
 
-     .go-top {
-    background-color: #fe6b35;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;  /* 水平置中 */
-    align-items: center;      /* 垂直置中 */
-    position: fixed;          /* 改用 fixed */
-    right: 30px;
-    bottom: 30px;            /* 從右下角顯示 */
-    border-radius: 50%;      /* 圓形按鈕 */
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 9999;           /* 確保在最上層 */
-}
-
-       
+        .go-top {
+            background-color: #fe6b35;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            /* 水平置中 */
+            align-items: center;
+            /* 垂直置中 */
+            position: fixed;
+            /* 改用 fixed */
+            right: 30px;
+            bottom: 30px;
+            /* 從右下角顯示 */
+            border-radius: 50%;
+            /* 圓形按鈕 */
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 9999;
+            /* 確保在最上層 */
+        }
     </style>
 </head>
 
@@ -425,12 +432,12 @@
                 </div>
                 <div class="entry">
                     <div id="deadline">報名截止：2025-11-30</div>
-                    <button id="entry-btn" type="button">立即報名</button>
+                    <a href=""><button id="entry-btn" type="button">立即報名</button></a>
                 </div>
             </div>
         </section>
         <div class="gotop-track">
-            <div class="go-top">TOP</div>
+            <a href=""><div class="go-top">TOP</div></a>
         </div>
     </main>
 
