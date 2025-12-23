@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <style>
+        body {}
+
         /* 篩選欄 */
         .accordion-wrapper {
             width: 300px;
             max-width: 100%;
-            /* margin: 0 auto; */
+            margin: 0 auto;
         }
 
         .panel {
@@ -48,6 +50,127 @@
 
         }
 
+        /*金額範圍*/
+        .wrapper {
+            position: relative;
+            width: 270px;
+            background-color: rgb(255, 255, 255);
+            padding: 20px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 80px;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 100%;
+            outline: none;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            background-color: transparent;
+            pointer-events: none;
+        }
+
+        .slider-track {
+            width: 100%;
+            height: 4px;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            border-radius: 5px;
+        }
+
+        input[type="range"]::-webkit-slider-runnable-tracks {
+            -webkit-appearance: none;
+            height: 4px;
+        }
+
+        input[type="range"]::-moz-range-track {
+            -moz-appearance: none;
+            height: 4px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 1.5em;
+            width: 1.5em;
+            background-color: #FF6b35;
+            border-radius: 50%;
+            margin-top: -5px;
+            pointer-events: auto;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            height: 1.5em;
+            width: 1.5em;
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: #FF6b35;
+            pointer-events: auto;
+            border: 2px solid white;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="range"]:active::-webkit-slider-thumb {
+            background-color: white;
+            border: 3px solid #FF6b35;
+        }
+
+        /* 數值顯示區域樣式 */
+        .value {
+            background-color: #FF6b35;
+            width: 200px;
+            position: relative;
+            margin: 0 auto 25px auto;
+            padding: 8px 0;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 16px;
+            color: white;
+            white-space: nowrap;
+        }
+
+        /* 小箭頭 - 確保顯示 */
+        .value:before {
+            content: "";
+            position: absolute;
+            height: 0;
+            width: 0;
+            border-top: 12px solid #FF6b35;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            margin: auto;
+            bottom: -12px;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            /* 確保箭頭在最上層 */
+        }
+
+        /* 簡單的數字顯示 */
+        .value span {
+            display: inline-block;
+            min-width: 60px;
+            text-align: center;
+        }
+
+
+
+
         /* 篩選項目 */
         .checkbox {
             display: inline-flex;
@@ -70,7 +193,7 @@
 
         #submit-btn {
             display: block;
-            /* margin: 20px auto; */
+            margin: 20px auto;
             width: 150px;
             height: 50px;
             border-radius: 4px;
@@ -87,7 +210,7 @@
             width: 300px;
             height: 200px;
             padding: 5px;
-            /* margin: 30px auto; */
+            margin: 30px auto;
         }
 
         #result div {
@@ -103,7 +226,7 @@
 
         #clear-btn {
             display: block;
-            /* margin: 20px auto; */
+            margin: 20px auto;
             width: 300px;
             height: 50px;
             border: none;
@@ -175,11 +298,40 @@
                         <h4 class="panel-title">
                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
                                 href="#collapseTwo">
-                                報名狀態
+                                報名金額
                             </a>
                         </h4>
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="wrapper">
+                                <!-- 金額範圍 -->
+                                <div class="value">
+                                    <span id="range1">1000</span>
+                                    <span>&nbsp;&ndash;&nbsp;</span>
+                                    <span id="range2">3500</span>
+                                </div>
+                                <div class="slider-container">
+                                    <div class="slider-track"></div>
+                                    <input type="range" name="" id="slider-1" oninput="slideOne()" min="0" max="5000"
+                                        value="1000">
+                                    <input type="range" name="" id="slider-2" oninput="slideTwo()" min="0" max="5000"
+                                        value="3500">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                href="#collapseFour">
+                                報名狀態
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
                         <div class="panel-body">
                             <label>
                                 <input id="select-all-state" type="checkbox">
@@ -235,12 +387,9 @@
             </div>
         </div>
     </div> <!-- end container -->
-    
+
 
     <button id="submit-btn" type="button">立即搜尋</button>
-
-    
-
     <div id="result"></div>
     <button id="clear-btn" type="button">
         <i class="bi bi-trash-fill"></i>
@@ -284,7 +433,47 @@
                 }
             });
         });
+        //================金額範圍
+        window.onload = function () {
+            slideOne();
+            slideTwo();
+        }
+        let sliderOne = document.getElementById('slider-1');
+        let sliderTwo = document.getElementById('slider-2');
+        let displayValOne = document.getElementById('range1');
+        let displayValTwo = document.getElementById('range2');
+        let minGap = 500;
+        let sliderTrack = document.querySelector('.slider-track');
+        let sliderMaxValue = 5000;
 
+        function slideOne() {
+            if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
+                sliderOne.value = parseInt(sliderTwo.value) - minGap;
+            }
+            displayValOne.textContent = sliderOne.value;
+            fillColor();
+        }
+
+        function slideTwo() {
+            if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
+                sliderTwo.value = parseInt(sliderOne.value) + minGap;
+            }
+            displayValTwo.textContent = sliderTwo.value;
+            fillColor();
+        }
+
+        function fillColor() {
+            let percent1 = (sliderOne.value / sliderMaxValue) * 100;
+            let percent2 = (sliderTwo.value / sliderMaxValue) * 100;
+            sliderTrack.style.background =
+                `linear-gradient(to right, 
+                #dadae5 0%, 
+                #dadae5 ${percent1}%, 
+                #FF6b35 ${percent1}%, 
+                #FF6b35 ${percent2}%, 
+                #dadae5 ${percent2}%, 
+                #dadae5 100%)`;
+        }
         // ===============報名狀態
         selectAllState.addEventListener('click', function () {
             if (selectAllState.checked) {
@@ -340,7 +529,8 @@
             const checkedEvent = document.querySelectorAll('.event:checked');
             const checkedState = document.querySelectorAll('.state:checked');
             const checkedOrganize = document.querySelectorAll('.organize:checked');
-
+            const minPrice = sliderOne.value;
+            const maxPrice = sliderTwo.value;
             let content = '';
 
             checkedEvent.forEach(item => {
@@ -355,13 +545,28 @@
                 content += `<div># ${item.value}</div>`;
             });
 
+            content += `<div># $${minPrice} – $${maxPrice}</div>`;
+
             result.innerHTML = content;
         });
 
         //================一鍵清除
         clearBtn.addEventListener('click', function () {
             result.innerHTML = '';
-        })
+
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                cb.checked = false;
+            });
+
+            sliderOne.value = 1000;
+            sliderTwo.value = 3500;//重置金額
+
+            displayValOne.textContent = sliderOne.value;
+            displayValTwo.textContent = sliderTwo.value;
+
+            fillColor();
+        });
+
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
