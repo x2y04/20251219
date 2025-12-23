@@ -121,7 +121,7 @@ main {
     /* height: 2000px; */
     display: flex;
     justify-content: center;
-    padding: 0px 50px;
+    padding: 50px 50px;
 }
 
 .search-section {
@@ -283,7 +283,36 @@ main {
 
 .pages {
     background-color: rgb(209, 135, 169);
-    /* height: 50px; */
+    display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.pagination a {
+    display: block;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #004E89;
+}
+
+.pagination a[aria-current="page"] {
+    background-color: #fe6b35;
+    color: white;
 }
 
 footer {
