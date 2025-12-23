@@ -6,13 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>比賽詳細</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             margin: unset;
         }
 
+        i {
+            color: #f7c5a0;
+        }
+
+        .fa-solid.fa-angle-left {
+            color: #1a659e;
+        }
+
         header {
-            background-color: grey;
+            /* background-color: grey; */
             /* height: 100vh; */
         }
 
@@ -58,17 +69,17 @@
         }
 
         main {
-            background-color: blanchedalmond;
-            padding: 10px 30px;
+            /* background-color: blanchedalmond; */
             display: flex;
             flex-direction: column;
             align-items: left;
-            padding: 20px 325px;
+            gap: 30px;
+            padding: 50px 325px;
         }
 
         .return {
             text-decoration: unset;
-            color: #004e89;
+            color: #1a659e;
             font-size: 24px;
             font-weight: bolder;
         }
@@ -77,17 +88,17 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 10px;
         }
 
         .content {
+            width: 850px;
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 100px;
         }
 
         .info {
-            background-color: rgb(222, 222, 222);
+            /* background-color: rgb(222, 222, 222); */
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -160,14 +171,15 @@
         }
 
         .float {
-            position: sticky;
-            top: 50px;
             background-color: white;
             width: 412px;
+            padding: 30px;
+            position: sticky;
+            top: 50px;
             display: flex;
             flex-direction: column;
             gap: 40px;
-            padding: 30px;
+            box-sizing: border-box;
             border: 3px solid #004e89;
             border-radius: 10px;
             box-shadow: 10px 10px #fe6b35;
@@ -207,14 +219,15 @@
             font-size: 24px;
             font-weight: bold;
             text-align: center;
-            letter-spacing: 35px;
+            letter-spacing: 20px;
+            text-indent: 20px;
             border: unset;
             border-bottom-left-radius: 3px;
             border-bottom-right-radius: 3px;
         }
 
         .bottom-content {
-            margin-top: 30px;
+            margin-top: 100px;
             width: 100%;
         }
 
@@ -298,7 +311,9 @@
         </div>
     </header>
     <main>
-        <a class="return" href="./index-2.html">返回上一頁</a>
+        <a class="return" href="./index-2.html">
+            <i class="fa-solid fa-angle-left"></i>
+            返回上一頁</a>
         <section class="top-content">
             <div class="content">
                 <div class="info">
@@ -306,11 +321,21 @@
                         <div class="parallelogram"></div>
                         <span>路跑大標題</span>
                     </div>
-                    <span class="info-list">OO路跑</span>
-                    <span class="info-list">台中市西屯區文華路100號</span>
-                    <span class="info-list">2025-12-05&nbsp;~&nbsp;2025-12-07</span>
-                    <span class="info-list">TWD 1,130</span>
-                    <span class="info-list">無認證</span>
+                    <span class="info-list">
+                        <i class="fa-regular fa-user"></i>
+                        OO路跑</span>
+                    <span class="info-list">
+                        <i class="fa-solid fa-location-dot"></i>
+                        台中市西屯區文華路100號</span>
+                    <span class="info-list">
+                        <i class="fa-solid fa-calendar"></i>
+                        2025-12-05&nbsp;~&nbsp;2025-12-07</span>
+                    <span class="info-list">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        TWD 1,130</span>
+                    <span class="info-list">
+                        <i class="fa-regular fa-circle-check"></i>
+                        無認證</span>
                     <div class="tags-holder">
                         <div class="tag">3k</div>
                         <div class="tag">5k</div>
@@ -380,8 +405,12 @@
             <div class="float">
                 <div class="float-title">路跑標題</div>
                 <div class="float-content">
-                    <span class="info-float">台中市西屯區文華路100號</span>
-                    <span class="info-float">2025-12-05&nbsp;~&nbsp;2025-12-07</span>
+                    <span class="info-float">
+                        <i class="fa-solid fa-location-dot"></i>
+                        台中市西屯區文華路100號</span>
+                    <span class="info-float">
+                        <i class="fa-solid fa-calendar"></i>
+                        2025-12-05&nbsp;~&nbsp;2025-12-07</span>
                     <div class="tags-holder-float">
                         <div class="tag">3k</div>
                         <div class="tag">5k</div>
@@ -389,7 +418,10 @@
                     </div>
                 </div>
                 <div class="entry">
-                    <div id="deadline">報名截止：2025-11-30</div>
+                    <div id="deadline">
+                        <i class="fa-regular fa-alarm-clock"></i>
+                        報名截止：2025-11-30
+                    </div>
                     <button id="entry-btn" type="button">立即報名</button>
                 </div>
             </div>
